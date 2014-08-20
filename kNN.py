@@ -54,14 +54,25 @@ def kNNClassify(newInput, dataSet, labels, k):
   
     return maxIndex  
 
+def testmatplotlib():
+    import matplotlib
+    import matplotlib.pyplot as plt
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    datamat = createDataSet()[0]
+    ax.scatter(datamat[:,0],datamat[:,1])
+    plt.show()
+
 if __name__ == '__main__':
     dataSet, labels = createDataSet() 
     k = 3  
-    
+
     testX = array([1.2, 1.0])  
     outputLabel = kNNClassify(testX, dataSet, labels, 3)  
     print "Your input is:", testX, "and classified to class: ", outputLabel  
       
     testX = array([0.1, 0.3])  
     outputLabel = kNNClassify(testX, dataSet, labels, 3)  
-    print "Your input is:", testX, "and classified to class: ", outputLabel  
+    print "Your input is:", testX, "and classified to class: ", outputLabel
+
+    testmatplotlib()
